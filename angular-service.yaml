@@ -9,5 +9,5 @@ spec:
   ports:
     - protocol: TCP
       port: 80
-      targetPort: 8090  # This is the targetPort inside the pod
+      targetPort: 30001  # This is the targetPort inside the pod
   type: NodePort
