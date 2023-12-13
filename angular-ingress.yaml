@@ -3,6 +3,8 @@ kind: Ingress
 metadata:
   name: angular-example-ingress
   namespace: angular-example
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
     - host: my-angular.com
