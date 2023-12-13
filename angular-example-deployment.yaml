@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: angular-example-container
-        image: praveenkumarreddy8498/angular-example:tagname
+        image: praveenkumarreddy8498/angular-example:latest
         ports:
         - containerPort: 80
