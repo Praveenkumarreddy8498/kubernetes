@@ -1,31 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: angular-example
-  namespace: keycloak
+  name: angular-example-deployment
+  namespace: your-namespace
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: keycloak
+      app: angular-example
   template:
     metadata:
       labels:
-        app: keycloak
+        app: angular-example
     spec:
       containers:
-      - name: keycloak
-        image: jboss/keycloak
-        env:
-        - name: KEYCLOAK_USER
-          valueFrom:
-            secretKeyRef:
-              name: keycloak-secret
-              key: KEYCLOAK_USER
-        - name: KEYCLOAK_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: keycloak-secret
-              key: KEYCLOAK_PASSWORD
+      - name: angular-example-container
+        image: praveenkumarreddy8498/angular-example:tagname
         ports:
-        - containerPort: 8080
+        - containerPort: 80
