@@ -10,4 +10,4 @@ spec:
         paths:
           - backend:
               serviceName: angular-example-service
-              serviceNumber: 80
+              servicePort: 80
