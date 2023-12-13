@@ -6,8 +6,9 @@ metadata:
 spec:
   selector:
     app: angular-example
+  type: LoadBalancer
   ports:
     - protocol: TCP
       port: 80
-      targetPort: 30001  # This is the targetPort inside the pod
-  type: NodePort
+      targetPort: 80  # This is the targetPort inside the pod
+      nodePort: 30001
