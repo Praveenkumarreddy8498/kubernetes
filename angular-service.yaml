@@ -6,7 +6,7 @@ metadata:
 spec:
   selector:
     app: angular-example
-  type: ClusterIP
+  type: LoadBalancer
   ports:
     - protocol: TCP
       port: 80
