@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: angular-example-deployment
-  namespace: angular-example
+  namespace: angular-demo-example
 spec:
   replicas: 1
   selector:
