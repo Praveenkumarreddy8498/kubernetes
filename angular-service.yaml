@@ -6,7 +6,7 @@ metadata:
 spec:
   selector:
     app: angular-example
-  type: NodePort
+  type: ClusterIP
   ports:
     - protocol: TCP
       port: 80
