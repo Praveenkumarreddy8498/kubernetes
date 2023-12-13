@@ -6,7 +6,7 @@ metadata:
 spec:
   selector:
     app: angular-example
-  type: LoadBalancer
+  type: NodePort
   ports:
     - protocol: TCP
       port: 80
