@@ -3,17 +3,11 @@ kind: Ingress
 metadata:
   name: angular-example-ingress
   namespace: angular-example
-  annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-    - host: my-angular.com  # Replace with your domain or use the IP
+    - host: my-angular.com
       http:
         paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: angular-example-service
-                port:
-                  number: 80
+          - backend:
+              serviceName: angular-example-service
+              serviceNumber: 80
