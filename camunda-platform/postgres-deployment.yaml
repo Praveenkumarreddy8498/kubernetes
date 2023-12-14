@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: postgres
-        image: postgres:${POSTGRES_VERSION}
+        image: postgres:14.5-alpine
         env:
         - name: POSTGRES_DB
           value: bitnami_keycloak
