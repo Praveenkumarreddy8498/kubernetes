@@ -14,16 +14,14 @@ spec:
     spec:
       containers:
       - name: keycloak
-        image: quay.io/keycloak/keycloak:23.0.1
+        image: bitnami/keycloak:21.1.2
         ports:
         - containerPort: 8080
         env:
-        - name: KEYCLOAK_ADMIN
+        - name: KEYCLOAK_USER
           value: admin
-        - name: KEYCLOAK_ADMIN_PASSWORD
+        - name: KEYCLOAK_PASSWORD
           value: admin
-        command: ["start-dev"]
-
 ---
 apiVersion: v1
 kind: Service
@@ -36,4 +34,4 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 8080
-  type: NodePort
+  type: NodePort  
