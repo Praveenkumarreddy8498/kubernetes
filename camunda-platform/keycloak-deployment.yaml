@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: keycloak
-        image: bitnami/keycloak:${KEYCLOAK_SERVER_VERSION}
+        image: bitnami/keycloak:21.1.2
         ports:
         - containerPort: 8080
         volumeMounts:
@@ -57,7 +57,7 @@ spec:
       targetPort: 8080
   type: NodePort
   externalIPs:
-    - <your_external_ip>
+    - 192.168.1.99
   externalName: keycloak-service
   dependsOn:
     - name: postgres
