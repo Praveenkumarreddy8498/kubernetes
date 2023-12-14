@@ -22,7 +22,6 @@ spec:
           value: admin
         - name: KEYCLOAK_PASSWORD
           value: admin
-        # Add other environment variables as needed
 ---
 apiVersion: v1
 kind: Service
@@ -35,4 +34,4 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 8080
-  type: NodePort  # Use "NodePort" if LoadBalancer is not available in your environment
+  type: NodePort  
