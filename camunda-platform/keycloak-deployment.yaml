@@ -17,32 +17,13 @@ spec:
         image: quay.io/keycloak/keycloak:23.0.1
         ports:
         - containerPort: 8080
-        volumeMounts:
-        - name: keycloak-theme
-          mountPath: /opt/bitnami/keycloak/themes/identity
         env:
-        - name: KEYCLOAK_HTTP_RELATIVE_PATH
-          value: /auth
-        - name: KEYCLOAK_DATABASE_HOST
-          value: postgres
-        - name: KEYCLOAK_DATABASE_PASSWORD
-          value: "#3]O?4RGj)DE7Z!9SA5"
-        - name: KEYCLOAK_ADMIN_USER
+        - name: KEYCLOAK_ADMIN
           value: admin
         - name: KEYCLOAK_ADMIN_PASSWORD
           value: admin
-        readinessProbe:
-          httpGet:
-            path: /auth
-            port: 8080
-          initialDelaySeconds: 30
-          periodSeconds: 10
-          timeoutSeconds: 5
-          failureThreshold: 3
-      volumes:
-      - name: keycloak-theme
-        persistentVolumeClaim:
-          claimName: keycloak-theme-pvc
+        command: ["start-dev"]
+
 ---
 apiVersion: v1
 kind: Service
@@ -56,8 +37,3 @@ spec:
       port: 80
       targetPort: 8080
   type: NodePort
-  externalIPs:
-    - 192.168.1.99
-  externalName: keycloak-service
-  dependsOn:
-    - name: postgres
