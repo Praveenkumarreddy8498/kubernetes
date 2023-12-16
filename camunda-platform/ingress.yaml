@@ -54,7 +54,7 @@ operate:
     host: "camunda-kube.acheron-tech.com"
     tls:
       enabled: false
-      secretName: ""
+      secretName: "operate"
 
 optimize:
   contextPath: "/optimize"
@@ -68,7 +68,7 @@ optimize:
     host: "camunda-kube.acheron-tech.com"
     tls:
       enabled: false
-      secretName: ""
+      secretName: "optimize"
 
 tasklist:
   contextPath: "/tasklist"
@@ -82,7 +82,7 @@ tasklist:
     host: "camunda-kube.acheron-tech.com"
     tls:
       enabled: false
-      secretName: ""
+      secretName: "tasklist"
 
 webModeler:
   # The context path is used for the web application that will be accessed by users in the browser.
